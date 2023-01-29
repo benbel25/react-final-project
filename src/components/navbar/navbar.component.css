@@ -1,0 +1,6 @@
+li {
+    margin-left: 15px;
+}
+nav .navbar-nav li a {
+    color: white !important;
+}

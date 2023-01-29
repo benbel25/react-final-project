@@ -1,0 +1,28 @@
+h1 {
+    font-size: 45px !important;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px !important;
+}
+
+.bg-pic {
+    background-image: url('/public/images/smartphone-g58663a29c_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+}
+
+.h1-home {
+    font-size: 70px !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .h1-home {
+        font-size: 40px !important;
+    }
+}
