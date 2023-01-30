@@ -52,13 +52,13 @@ const AboutPage = () => {
                     <img
                         src={pic1}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water"
+                        alt="phones"
                     />
 
                     <img
                         src={pic2}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Wintry Mountain Landscape"
+                        alt="apps"
                     />
                 </div>
 
@@ -66,13 +66,13 @@ const AboutPage = () => {
                     <img
                         src={pic3}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Mountains in the Clouds"
+                        alt="girl holding phone"
                     />
 
                     <img
                         src={pic4}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water"
+                        alt="man walking on train tracks"
                     />
                 </div>
 
@@ -80,13 +80,13 @@ const AboutPage = () => {
                     <img
                         src={pic5}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Waves at Sea"
+                        alt="hand holding phone"
                     />
 
                     <img
                         src={pic6}
                         className="w-100 shadow-1-strong rounded mb-4"
-                        alt="Yosemite National Park"
+                        alt="castle come out from phone"
                     />
                 </div>
             </div>
