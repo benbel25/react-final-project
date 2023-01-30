@@ -12,7 +12,6 @@ const rootReducer = combineReducers({
     cards: cardsReducer,
     users: usersReducer,
     public: publicReducer,
-    // add more reducers here
 })
 
 const persistConfig = {

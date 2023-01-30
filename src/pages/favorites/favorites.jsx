@@ -30,11 +30,21 @@ const FavoritesPage = () => {
     return (
         <Box>
             {favorites.length === 0 ? (
-                <Typography variant="h4" component="h1" gutterBottom>
+                <Typography
+                    className="text-center"
+                    variant="h4"
+                    component="h1"
+                    gutterBottom
+                >
                     You have no favorites
                 </Typography>
             ) : (
-                <Typography variant="h4" component="h1" gutterBottom>
+                <Typography
+                    className="text-center"
+                    variant="h4"
+                    component="h1"
+                    gutterBottom
+                >
                     Favorites
                 </Typography>
             )}

@@ -18,7 +18,6 @@ const CreateProductCardPage = () => {
         productPrice: '',
         productImage: '',
         productQuantity: '',
-        // productTags: '',
         productCategories: '',
     })
 
@@ -114,21 +113,9 @@ const CreateProductCardPage = () => {
                 error={cardData.errors?.productQuantity}
                 helperText={cardData.errors?.productQuantity}
             />
-            {/* <Typography variant="h6">
-                add tags with comma separated values
-            </Typography>
-            <TextField
-                sx={{ width: '300px', marginBottom: '10px' }}
-                name="productTags"
-                label="Product Tags"
-                variant="outlined"
-                value={cardData.productTags}
-                onChange={handleChange}
-                error={cardData.errors?.productTags}
-                helperText={cardData.errors?.productTags}
-            /> */}
+
             <Typography variant="h6">
-                add productCategories with comma separated values
+                Add product categories with comma separated values
             </Typography>
             <TextField
                 sx={{ width: '300px', marginBottom: '10px' }}

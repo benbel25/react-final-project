@@ -10,6 +10,7 @@ import {
     List,
     Slider,
     Typography,
+    TextField,
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { toast } from 'react-toastify'
@@ -68,6 +69,7 @@ const CardsList = ({ cards, favorite, homePage }) => {
     const [selectedCategory, setSelectedCategory] = useState('')
     const cardsArr = cards || []
     const [filteredCards, setFilteredCards] = useState([cardsArr])
+    const [search, setSearch] = useState('')
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -122,7 +124,6 @@ const CardsList = ({ cards, favorite, homePage }) => {
     useEffect(() => {
         try {
             console.log(generateUniqueCategoriesObj(categories))
-            // console.log(categories)
         } catch (error) {
             console.log(error)
             toast.error('cannot get cards', {
@@ -137,6 +138,14 @@ const CardsList = ({ cards, favorite, homePage }) => {
         }
     }, [dispatch])
 
+    const filterByName = (name) => {
+        setFilteredCards(
+            cardsArr.filter((item) =>
+                item.productName.toLowerCase().includes(name.toLowerCase())
+            )
+        )
+    }
+
     useEffect(() => {
         if (selectedCategory === '') {
             setFilteredCards(cardsArr)
@@ -148,8 +157,33 @@ const CardsList = ({ cards, favorite, homePage }) => {
             )
         }
     }, [selectedCategory, cardsArr])
+
+    useEffect(() => {
+        if (search !== '') {
+            filterByName(search)
+        } else {
+            setFilteredCards(cardsArr)
+        }
+    }, [search])
     return (
         <Box width={{}}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <TextField
+                    id="outlined-basic"
+                    label="Search"
+                    variant="outlined"
+                    onChange={(e) => setSearch(e.target.value)}
+                    sx={{ width: '30%', mt: 4, mb: 4 }}
+                    value={search}
+                />
+            </Box>
             {generateUniqueCategoriesObj(categories).length > 0 && (
                 <Box
                     sx={{

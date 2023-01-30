@@ -1,0 +1,15 @@
+.warrpar {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 40px;
+}
+
+.icons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

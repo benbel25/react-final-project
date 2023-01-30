@@ -26,6 +26,7 @@ const AdminUserPage = () => {
         firstName: '',
         lastName: '',
         email: '',
+        phone: '',
         password: '',
         roles: ['admin'],
     })
@@ -120,6 +121,22 @@ const AdminUserPage = () => {
                                 <div className="alert alert-danger">
                                     "Last Name" must be at least 2 characters
                                     long
+                                </div>
+                            )}
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                required
+                                fullWidth
+                                id="phone"
+                                label="Phone Number"
+                                name="phone"
+                                autoComplete="phone"
+                                onChange={handleChange}
+                            />
+                            {showErrors('phone') && (
+                                <div className="alert alert-danger">
+                                    Please provide valid phone number
                                 </div>
                             )}
                         </Grid>

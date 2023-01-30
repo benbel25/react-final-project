@@ -26,6 +26,7 @@ const SignUpPage = () => {
         firstName: '',
         lastName: '',
         email: '',
+        phone: '',
         password: '',
     })
     const handleSubmit = (event) => {
@@ -122,21 +123,22 @@ const SignUpPage = () => {
                                 </div>
                             )}
                         </Grid>
-                        {/* <Grid item xs={12}>
+                        <Grid item xs={12}>
                             <TextField
+                                required
                                 fullWidth
                                 id="phone"
-                                label="Phone Number(optional)"
+                                label="Phone Number"
                                 name="phone"
                                 autoComplete="phone"
                                 onChange={handleChange}
                             />
                             {showErrors('phone') && (
                                 <div className="alert alert-danger">
-                                    {showErrors('phone')}
+                                    Please provide valid phone number
                                 </div>
                             )}
-                        </Grid> */}
+                        </Grid>
                         <Grid item xs={12}>
                             <TextField
                                 required

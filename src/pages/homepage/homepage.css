@@ -11,7 +11,7 @@ a {
 }
 
 .bg-pic {
-    background-image: url('/public/images/smartphone-g58663a29c_1920.jpg');
+    background-image: url('../../features/public/images/smartphone-g58663a29c_1920.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;

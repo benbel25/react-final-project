@@ -26,8 +26,8 @@ const SignInPage = () => {
     const [forgotEmail, setForgotEmail] = useState('')
     const [disabled, setDisabled] = useState(false)
     const [formData, setFormData] = useState({
-        email: 'benbel4@gmail.com',
-        password: 'Ben180696!',
+        email: '',
+        password: '',
     })
 
     const handleSubmit = (event) => {

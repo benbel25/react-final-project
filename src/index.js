@@ -1,4 +1,3 @@
-// remove comment from line 32
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
@@ -19,13 +18,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 const theme = createTheme()
 
 root.render(
-    //!<React.StrictMode>
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <ThemeProvider theme={theme}>
-                <App />
-            </ThemeProvider>
-        </PersistGate>
-    </Provider>
-    //! </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <ThemeProvider theme={theme}>
+                    <App />
+                </ThemeProvider>
+            </PersistGate>
+        </Provider>
+    </React.StrictMode>
 )

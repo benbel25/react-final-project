@@ -50,10 +50,8 @@ const HomePage = () => {
                         <Box
                             key={product._id}
                             sx={{
-                                maxWidth: 345,
                                 margin: '10px',
                                 display: 'inline-block',
-                                m: 8,
                             }}
                         >
                             <Card
