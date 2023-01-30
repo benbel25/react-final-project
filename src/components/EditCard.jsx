@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 import Joi from 'joi-browser'
 import cardSchmea from '../validation/card'
 import { Box } from '@mui/system'
-import { Button, Chip, TextField, Typography } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 const EditCard = () => {
@@ -19,7 +19,6 @@ const EditCard = () => {
         productPrice: card.productPrice,
         productImage: card.productImage,
         productQuantity: card.productQuantity,
-        // productTags: card.productTags,
         productCategories: card.productCategories,
         errors: {},
     })
@@ -119,19 +118,7 @@ const EditCard = () => {
                 error={cardData.errors?.productQuantity}
                 helperText={cardData.errors?.productQuantity}
             />
-            {/* <Typography variant="h6">
-                add tags with comma separated values
-            </Typography>
-            <TextField
-                sx={{ width: '300px', marginBottom: '10px' }}
-                name="productTags"
-                label="Product Tags"
-                variant="outlined"
-                value={cardData.productTags}
-                onChange={handleChange}
-                error={cardData.errors?.productTags}
-                helperText={cardData.errors?.productTags}
-            /> */}
+
             <Typography variant="h6">
                 add productCategories with comma separated values
             </Typography>

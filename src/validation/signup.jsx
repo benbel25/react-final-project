@@ -20,10 +20,6 @@ const signUpSchema = {
             /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]{4,})(?=.*?[#?!@$%^&*-]).{8,}$/
         ),
     roles: Joi.array().items(Joi.string().valid('admin', 'user')),
-
-   
-
-    // phone validation: .regex(/^0[2-9][-]?\d{7,9}$|^05[0-9][-]?\d{7,9}$|^07[7,3][-]?\d{7,9}$/)
 }
 
 export default signUpSchema

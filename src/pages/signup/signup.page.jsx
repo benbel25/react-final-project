@@ -3,7 +3,6 @@ import { toast } from 'react-toastify'
 import Joi from 'joi-browser'
 import signUpSchema from '../../validation/signup'
 import { useNavigate } from 'react-router-dom'
-
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -16,7 +15,6 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useDispatch } from 'react-redux'
 import { register } from '../../features/auth/authSlice'
-import { extractErrorMessage } from '../../utils'
 
 const SignUpPage = () => {
     const navigate = useNavigate()
@@ -25,8 +23,8 @@ const SignUpPage = () => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        email: '',
         phone: '',
+        email: '',
         password: '',
     })
     const handleSubmit = (event) => {
@@ -47,12 +45,10 @@ const SignUpPage = () => {
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        //check for errors
         const errors = { ...formData.errors }
         const errorMessage = Joi.validate(value, signUpSchema[name]).error
         if (errorMessage) errors[name] = errorMessage.details[0].message
         else delete errors[name]
-        //update state
         setFormData({ ...formData, [name]: value, errors })
 
         if (Object.keys(errors).length === 0) setDisabled(false)

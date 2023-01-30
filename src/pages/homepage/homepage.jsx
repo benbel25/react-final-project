@@ -1,17 +1,9 @@
-import {
-    Box,
-    Card,
-    TextField,
-    CardMedia,
-    CardContent,
-    Typography,
-} from '@mui/material'
+import { Box, Card, CardMedia, CardContent, Typography } from '@mui/material'
 import { useLayoutEffect } from 'react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { getProducts } from '../../features/public/publicSlice'
-import CardsList from '../CardsList'
 import Spinner from '../../components/Spinner'
 import './homepage.css'
 const HomePage = () => {

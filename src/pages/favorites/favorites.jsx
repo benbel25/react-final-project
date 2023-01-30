@@ -1,20 +1,15 @@
 import { Box, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Spinner from '../../components/Spinner'
-import {
-    fetchFavorites,
-    removeFromFavorites,
-} from '../../features/users/usersSlice'
+import { fetchFavorites } from '../../features/users/usersSlice'
 import { extractErrorMessage } from '../../utils'
 import CardsList from '../CardsList'
 
 const FavoritesPage = () => {
     const { isLoading, favorites } = useSelector((state) => state.users)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     useEffect(() => {
         try {

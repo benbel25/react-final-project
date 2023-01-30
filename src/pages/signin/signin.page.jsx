@@ -14,7 +14,6 @@ import Box from '@mui/material/Box'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
-import { extractErrorMessage } from '../../utils'
 import { useDispatch } from 'react-redux'
 import { forgotPassword, login } from '../../features/auth/authSlice'
 import ForgetPasswordForm from '../../components/ForgotPopUp'
@@ -47,12 +46,10 @@ const SignInPage = () => {
     }
     const handleChange = (event) => {
         const { name, value } = event.target
-        //check for errors
         const errors = { ...formData.errors }
         const errorMessage = Joi.validate(value, signInSchema[name]).error
         if (errorMessage) errors[name] = errorMessage.details[0].message
         else delete errors[name]
-        //update state
         setFormData({ ...formData, [name]: value, errors })
 
         if (Object.keys(errors).length === 0) setDisabled(false)

@@ -1,6 +1,6 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, redirect, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { logOut } from '../../features/auth/authSlice'
 import './navbar.component.css'
 
@@ -35,8 +35,6 @@ const Navbar = () => {
                         <NavLink
                             className="nav-link"
                             onClick={() => {
-                                //logout and redirect to home page with toast
-
                                 onLogout()
                             }}
                         >

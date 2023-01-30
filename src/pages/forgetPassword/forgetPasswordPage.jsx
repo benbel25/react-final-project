@@ -1,20 +1,14 @@
 import { useState } from 'react'
-import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import Joi from 'joi-browser'
-
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
-import Link from '@mui/material/Link'
-import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
-import { extractErrorMessage } from '../../utils'
-import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 import api from '../../App/api'
 import passwordReset from '../../validation/passwordReset'
@@ -49,7 +43,7 @@ const ForgetPasswordPage = () => {
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        // check for errors
+
         const errors = { ...formData.errors }
         const errorMessage = Joi.validate(value, passwordReset[name]).error
 
@@ -60,7 +54,6 @@ const ForgetPasswordPage = () => {
 
         if (Object.keys(errors).length === 0) setDisabled(false)
         else setDisabled(true)
-        //update state
     }
 
     const showErrors = (name) => {

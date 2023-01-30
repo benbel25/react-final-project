@@ -1,5 +1,4 @@
 import { ToastContainer } from 'react-toastify'
-// import { Fragment } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Footer from './components/footer/footer.component'
 import Navbar from './components/navbar/navbar.component'

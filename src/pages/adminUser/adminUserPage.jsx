@@ -16,7 +16,6 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useDispatch } from 'react-redux'
 import { register } from '../../features/auth/authSlice'
-import { extractErrorMessage } from '../../utils'
 
 const AdminUserPage = () => {
     const navigate = useNavigate()
@@ -48,12 +47,12 @@ const AdminUserPage = () => {
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        //check for errors
+        
         const errors = { ...formData.errors }
         const errorMessage = Joi.validate(value, signUpSchema[name]).error
         if (errorMessage) errors[name] = errorMessage.details[0].message
         else delete errors[name]
-        //update state
+        
         setFormData({ ...formData, [name]: value, errors })
 
         if (Object.keys(errors).length === 0) setDisabled(false)
