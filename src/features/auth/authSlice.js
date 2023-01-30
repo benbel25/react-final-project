@@ -66,7 +66,7 @@ export const authSlice = createSlice({
                 state.token = action.payload.token
                 state.admin = action.payload.admin
 
-                console.log(action.payload)
+                
             })
             .addCase(register.fulfilled, (state, action) => {
                 state.loading = false

@@ -65,9 +65,6 @@ const SignInPage = () => {
         setOpen(false)
     }
     const handleForgotPassword = () => {
-        console.log('forgot password')
-        console.log(forgotEmail)
-
         dispatch(forgotPassword(forgotEmail))
             .unwrap()
             .then((result) => {

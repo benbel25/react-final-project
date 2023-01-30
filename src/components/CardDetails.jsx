@@ -69,7 +69,7 @@ const CardDetails = () => {
     }, [isFavorite])
 
     const handleEdit = () => {
-        console.log('edit')
+        
         navigate(`/edit/${card._id}`)
     }
 

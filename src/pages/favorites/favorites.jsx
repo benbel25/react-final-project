@@ -44,7 +44,7 @@ const FavoritesPage = () => {
                 </Typography>
             )}
 
-            <CardsList cards={favorites} />
+            <CardsList cards={favorites} favorite={true} />
         </Box>
     )
 }

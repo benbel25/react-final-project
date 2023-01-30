@@ -1,6 +1,11 @@
 # Ben's phone store
 
 this project is about online phone store and it's for people who loves phone and technology
+In the website you can sign up as admin or as normal
+user.
+As admin you can add new products, edit them and delete
+them. you can also add to favorites your products.
+As normal user you can only add products to favorites
 
 ## Installation
 
@@ -50,3 +55,5 @@ and to open the project you need to run:
 **Client:** React, Redux
 
 **Server:** Node, Express
+
+### By Ben Bel

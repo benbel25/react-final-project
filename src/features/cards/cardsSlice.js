@@ -86,7 +86,7 @@ export const cardsSlice = createSlice({
             })
             .addCase(updateCard.fulfilled, (state, action) => {
                 state.loading = false
-                console.log('action.payload ', action.payload)
+                
 
                 state.cards = state.cards.map((card) =>
                     card._id === action.payload._id ? action.payload : card
@@ -99,7 +99,7 @@ export const cardsSlice = createSlice({
             .addCase(deleteCard.fulfilled, (state, action) => {
                 state.loading = false
 
-                console.log('action.payload ', action.payload._id)
+                
 
                 state.cards = state.cards.filter(
                     (card) => card._id !== action.payload._id

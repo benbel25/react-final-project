@@ -16,7 +16,7 @@ const HomePage = () => {
             .unwrap()
             .then((result) => {
                 if (result) {
-                    console.log(result)
+                    
                     setFetchedProducts(result)
                 }
             })

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { fetchCards, setCard } from '../features/cards/cardsSlice'
@@ -66,6 +66,7 @@ function CardItem(props) {
 }
 
 const CardsList = ({ cards, favorite, homePage }) => {
+    
     const [selectedCategory, setSelectedCategory] = useState('')
     const cardsArr = cards || []
     const [filteredCards, setFilteredCards] = useState([cardsArr])
@@ -123,7 +124,7 @@ const CardsList = ({ cards, favorite, homePage }) => {
 
     useEffect(() => {
         try {
-            console.log(generateUniqueCategoriesObj(categories))
+            
         } catch (error) {
             console.log(error)
             toast.error('cannot get cards', {
@@ -234,7 +235,7 @@ const CardsList = ({ cards, favorite, homePage }) => {
                                                 ? ''
                                                 : item.label
                                         )
-                                        console.log(selectedCategory)
+                                        
                                     }}
                                     sx={{
                                         cursor: 'pointer',
@@ -262,29 +263,32 @@ const CardsList = ({ cards, favorite, homePage }) => {
                     flexDirection: 'column',
                 }}
             >
-                <Typography id="range-slider" gutterBottom>
-                    Price range
-                </Typography>
-
-                <Slider
-                    sx={{
-                        width: 300,
-                        color: 'red',
-                        height: 8,
-                    }}
-                    label="Temperature"
-                    aria-labelledby="range-slider"
-                    getAriaLabel={() => 'Temperature range'}
-                    value={priceRange}
-                    onChange={(event, newValue) => {
-                        handlePriceChange(event, newValue)
-                    }}
-                    valueLabelFormat={(value) => `${value}` + '₪'}
-                    min={getLowestPrice(cardsArr)}
-                    max={getHighestPrice(cardsArr)}
-                    valueLabelDisplay="auto"
-                    getAriaValueText={(value) => `${value}` + '₪'}
-                />
+                {!favorite && (
+                    <>
+                        <Typography id="range-slider" gutterBottom>
+                            Price range
+                        </Typography>
+                        <Slider
+                            sx={{
+                                width: 300,
+                                color: 'red',
+                                height: 8,
+                            }}
+                            label="Temperature"
+                            aria-labelledby="range-slider"
+                            getAriaLabel={() => 'Temperature range'}
+                            value={priceRange}
+                            onChange={(event, newValue) => {
+                                handlePriceChange(event, newValue)
+                            }}
+                            valueLabelFormat={(value) => `${value}` + '₪'}
+                            min={getLowestPrice(cardsArr)}
+                            max={getHighestPrice(cardsArr)}
+                            valueLabelDisplay="auto"
+                            getAriaValueText={(value) => `${value}` + '₪'}
+                        />
+                    </>
+                )}
             </Box>
             <Box
                 sx={{

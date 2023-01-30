@@ -31,7 +31,7 @@ const ForgetPasswordPage = () => {
             confirmPassword,
         })
             .then((res) => {
-                console.log('res', res)
+               
                 toast.success('Your password has been successfully reset')
                 navigate('/signin')
             })
